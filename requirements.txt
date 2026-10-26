@@ -1,0 +1,9 @@
+mcp>=1.2               # MCP server / FastMCP (mcp_server.py)
+anthropic>=0.40        # Claude agent loop for the Electron panel backend (server.py)
+openai>=1.40           # OpenRouter (OpenAI-compatible) generation — terminal agent.py only
+websockets>=12.0       # localhost backend for the Electron panel (server.py)
+Pillow>=10.0           # media provider: gradient images with text
+numpy>=1.24            # media provider: tone-based audio generation
+# Requires DaVinci Resolve STUDIO installed and running, with External scripting
+# enabled (Preferences -> System -> General -> External scripting using: Local).
+# The Electron panel (resolve_panel/) additionally needs Node.js.

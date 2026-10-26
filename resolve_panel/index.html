@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; connect-src ws://127.0.0.1:8765; style-src 'self' 'unsafe-inline';">
+    <title>ResolveKit</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>ResolveKit</h1>
+        <span id="status" class="status off" title="Backend connection">offline</span>
+    </header>
+
+    <section class="card">
+        <label>Topic</label>
+        <input id="topic" type="text" placeholder="e.g. cold brew coffee at home">
+        <label>Mood</label>
+        <select id="mood">
+            <option>upbeat</option><option>energetic</option><option>calm</option>
+            <option>serene</option><option>moody</option><option>epic</option>
+            <option>playful</option><option>warm</option><option>neutral</option>
+        </select>
+        <label>Length</label>
+        <select id="length">
+            <option>30s</option><option selected>60s</option><option>90s</option><option>3 min</option>
+        </select>
+        <button id="plan" class="primary">Plan &amp; script</button>
+    </section>
+
+    <section class="chips">
+        <button data-action="suggest">Suggest edits</button>
+        <button data-action="voiceover">Voiceover</button>
+        <button data-action="media">Generate media</button>
+        <button data-action="effects">Add title/effect</button>
+    </section>
+
+    <section id="log" class="log" aria-live="polite"></section>
+
+    <section class="composer">
+        <input id="chat" type="text" placeholder="Ask ResolveKit to do anything…" autocomplete="off">
+        <button id="send" class="primary">Send</button>
+    </section>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

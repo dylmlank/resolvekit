@@ -1,0 +1,9 @@
+{
+    "name": "resolvekit-panel",
+    "version": "1.0.0",
+    "description": "ResolveKit Workflow Integration panel for DaVinci Resolve",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    }
+}

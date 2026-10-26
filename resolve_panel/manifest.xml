@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlackmagicDesign>
+    <Plugin>
+        <Id>com.dylan.resolvekit</Id>
+        <Name>ResolveKit</Name>
+        <Version>1.0</Version>
+        <Description>Plan, script, edit, and generate media with Claude.</Description>
+        <FilePath>main.js</FilePath>
+    </Plugin>
+</BlackmagicDesign>

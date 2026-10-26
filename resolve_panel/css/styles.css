@@ -1,0 +1,107 @@
+:root {
+    --bg: #1b1d21;
+    --panel: #26292e;
+    --line: #33373d;
+    --text: #e7e9ec;
+    --muted: #9aa0a8;
+    --accent: #e0762c;
+    --accent-hi: #f28b3f;
+    --user: #6db3f2;
+    --tool: #8a9099;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font: 13px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 12px;
+    gap: 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h1 {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+h1::before { content: "▸ "; color: var(--accent); }
+
+.status {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--line);
+    color: var(--muted);
+}
+.status.on { background: #1e3a24; color: #7fd493; }
+.status.connecting { color: var(--accent-hi); }
+.status.off { color: #d98; }
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+input, select {
+    background: #1b1d21;
+    border: 1px solid var(--line);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 7px 8px;
+    font: inherit;
+    outline: none;
+}
+input:focus, select:focus { border-color: var(--accent); }
+
+button {
+    background: var(--line);
+    color: var(--text);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font: inherit;
+    cursor: pointer;
+}
+button:hover:not(:disabled) { background: #3d434b; }
+button:disabled { opacity: 0.45; cursor: default; }
+button.primary { background: var(--accent); color: #1b1206; font-weight: 600; margin-top: 4px; }
+button.primary:hover:not(:disabled) { background: var(--accent-hi); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button { font-size: 12px; padding: 6px 10px; }
+
+.log {
+    flex: 1;
+    overflow-y: auto;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.line { white-space: pre-wrap; word-break: break-word; }
+.line.user { color: var(--user); }
+.line.assistant { color: var(--text); }
+.line.tool { color: var(--tool); font-size: 12px; }
+.line.error { color: #e88; }
+
+.composer { display: flex; gap: 6px; }
+.composer input { flex: 1; }
+.composer button { padding: 8px 14px; }
